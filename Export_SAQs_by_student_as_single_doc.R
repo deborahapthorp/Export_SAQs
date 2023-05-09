@@ -3,8 +3,7 @@ library(readxl) # for reading Excel file
 library(svDialogs)
 library(tidyverse) # for tidy code 
 library(janitor) # for cleaning variable names 
-library(tools)
-# library(crosstable)
+library(tools) # for getting file name without extension 
 
 # Use interactive dialogue to get the name of the results file 
 Responses <- dlg_open(
