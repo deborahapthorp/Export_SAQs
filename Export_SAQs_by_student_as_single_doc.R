@@ -3,8 +3,7 @@ library(readxl) # for reading Excel file
 library(svDialogs)
 library(tidyverse) # for tidy code 
 library(janitor) # for cleaning variable names 
-library(tools)
-# library(crosstable)
+library(tools) # for getting file name without extension 
 
 # Use interactive dialogue to get the name of the results file 
 Responses <- dlg_open(
@@ -41,7 +40,7 @@ varlistR <- paste("response", questions[1]:questions[nQuestions], sep = "_")
 
 docName <- paste(saveName," SAQs by student.docx", sep = "") # Document name (no spaces)
 doc1 <- read_docx()  # calls function to create a document using officeR
-# doc1 <- body_add_title(doc1, saveName, 1)
+
 # Loop that makes a separate section for each student
 for (i in 1:rows){
   Name <- paste(All_responses$first_name[i], All_responses$surname[i], sep = " ") # Student name - could also use student number
