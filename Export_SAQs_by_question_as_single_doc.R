@@ -4,7 +4,7 @@ library(svDialogs)
 library(tidyverse) # for tidy code 
 library(janitor) # for cleaning variable names 
 library(tools)
-# library(crosstable)
+
 
 # Use interactive dialogue to get the name of the results file 
 Responses <- dlg_open(
@@ -49,8 +49,8 @@ for (i in 1:nQuestions){
   doc1 <- body_add_par(doc1, value = qName, style = "heading 1") # Add question name at top
   for (q in 1:rows) # student loop (could also make this anonymous by using student no.)
   {Name <- paste(All_responses$first_name[q], All_responses$surname[q], sep = " ") # Student name
-    doc1 <- body_add_par(doc1, value = Name , style = "heading 2", pos = "after") # Add question name 
-    doc1 <- body_add_par(doc1, value = All_responses[[varlistR[i]]][q], style = "Normal", pos = "after") # add response
+    doc1 <- body_add_par(doc1, value = Name , style = "heading 2", pos = "after") # Add student name 
+    doc1 <- body_add_par(doc1, value = All_responses[[varlistR[i]]][q], style = "Normal", pos = "after") # add their response to this question
     } 
 }
 
